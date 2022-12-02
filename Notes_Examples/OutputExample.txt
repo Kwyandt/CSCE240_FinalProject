@@ -1,0 +1,89 @@
+******** Testing << ********
+List:
+List0:
+List1: 0
+List2: 0 1
+List3: 0 1 2
+List4:
+List5: 0 1 2
+
+******** Testing = ********
+List0 = list2 = list5: 0 1 2    0 1 2
+
+******** Testing == ********
+list == list0: 1
+list3 == list5: 1
+list3 == list2: 0
+list0 == list1: 0
+
+******** Testing insert ********
+list0.insert(0,10): 10
+list3.insert(-1,10): 10 0 1 2
+list2.insert(1,10): 0 10 1
+list2.insert(10,10): 0 1 2 10
+
+******** Testing + ********
+list1 + list: 0
+List + list1: 0
+List0 + list1: 10 0
+List2 + list1 + list3: 0 10 1 10 0 1 2 0
+
+******** Testing Right [] Indexing ********
+list9[3]: 10
+list9[0]: 0
+list9[-1]: 0
+list9[7]: 0
+list9[list9.size()]: 0
+list9[100]: 0
+list[0]: 0
+
+******** Testing indexOf ********
+list9.indexOf(1): 2
+list9.indexOf(10): 1
+list9.indexOf(20): -1
+list7.indexOf(0): 0
+list7.indexOf(5): -1
+list.indexOf(3): -1
+
+******** Testing Remove ********
+list9.remove(0): 0      10 1 10 0 1 2 0
+list9.remove(-1): 10    1 10 0 1 2 0
+list9.remove(2): 0      1 10 1 2 0
+list9.remove(4): 0      1 10 1 2
+list9.remove(list9.size()): 2   1 10 1
+list.remove(0): Can't remove because size <= 0... -1
+
+******** Testing contains ********
+list9.contains(10): 1
+list9.contains(100): 0
+list.contains(20): 0
+list7.contains(2): 0
+list7.contains(0): 1
+
+******** Testing isEmpty ********
+list9.isEmpty(): 0
+list7.isEmpty(): 0
+list.isEmpty(): 1
+
+******** Testing clear ********
+list9.clear():
+list7.clear():
+list.clear():
+list9.insert(0,10): 10
+list7.insert(0,10): 10
+
+******** Testing >> ********
+Input a number to append to list10:10
+10 >> list10: 10
+Input a number to append to list10:11
+11 >> list10: 10 11
+Input a number to append to list11:4
+4 >> list11: 0 1 2 4
+
+******** Testing Left [] Indexing ********
+list11[0] = 5: 5 1 2 4
+list11[-1] = 4: 4 1 2 4
+list11[3] = 5: 4 1 2 5
+list11[list11.size()] = 5: 4 1 2 10
+list11[100] = 5: 4 1 2 100
+list[0] = 5:

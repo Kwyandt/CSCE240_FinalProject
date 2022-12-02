@@ -1,0 +1,3 @@
+/Data/Dropbox/Projects/C++/Datum.v2/cmake-build-debug/CMakeFiles/Datum_v2.dir
+/Data/Dropbox/Projects/C++/Datum.v2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Data/Dropbox/Projects/C++/Datum.v2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
