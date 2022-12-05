@@ -6,6 +6,11 @@
 
 //does this need to call datum object//im confused abt how they connect
 class LList {
+    /* //overload operator<< method that prints all elements of the LList in one row, delimeter is spac
+        //not sure if const is right or if this returns a string, generally unsure
+        const LList operator<<(const LList &rhs);
+        //overlaod operator >> method that will obtain a vlaue of stream to be appended to end of LList object
+        const LList operator>>(const LList &lhs); */
     public:
         //default constructor
         LList();
@@ -38,11 +43,6 @@ class LList {
         int operator[](int index) const;
         //i think you neeeded like one by refernce and one not for this - return the value of the array at given index or set value at given index - return first or last if out of bounds
         int & operator[](int index);
-        //overload operator<< method that prints all elements of the LList in one row, delimeter is spac
-        //not sure if const is right or if this returns a string, generally unsure
-        const LList operator<<(const LList &rhs);
-        //overlaod operator >> method that will obtain a vlaue of stream to be appended to end of LList object
-        const LList operator>>(const LList &lhs);
         //overloaoperator== that returns true of two linked lists are identical and dalce if differenct        
         bool operator==(const LList &rhs) const;
 
