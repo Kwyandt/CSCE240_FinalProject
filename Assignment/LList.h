@@ -11,6 +11,9 @@ class LList {
         const LList operator<<(const LList &rhs);
         //overlaod operator >> method that will obtain a vlaue of stream to be appended to end of LList object
         const LList operator>>(const LList &lhs); */
+
+        friend ostream & operator<< (ostream &lhs, const LList &rhs);
+	    friend istream & operator>> (istream &lhs, LList &rhs);
     public:
         //default constructor
         LList();
@@ -36,7 +39,7 @@ class LList {
 
         //operators
         //overload operator+ that will append two lists - cascade capable
-        const LList operator+(const LList &rhs);
+        const LList operator+(const LList &rhs)const;
         //overload operator= that will assign content of lhs with rhs - cascade capable
         const LList operator=(const LList &rhs);
         //overload operator[] method that can be used on lhs or rhs of operator assignment
@@ -45,7 +48,6 @@ class LList {
         int & operator[](int index);
         //overloaoperator== that returns true of two linked lists are identical and dalce if differenct        
         bool operator==(const LList &rhs) const;
-
         //getters and setters
         //not sure if this sets dataum or what exactly
         void setData(int data, int index);
