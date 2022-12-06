@@ -20,12 +20,18 @@ LList::LList(const LList& list){
         
 void LList::insert (int index, int value){
     if(index <= 0){
+        /* Datum *temp = head;
+        Datum *newData;
+        *newData = Datum(value);
+        head = newData;
+        head->setNext(*temp); */
         Datum *temp = head;
         *head = Datum(value);
-        head->setNext(*temp);
+        head->setNext(*temp->getNext());
     }
     else if(index >= length){
-        tail->setNext(Datum(value));
+        Datum data(value);
+        tail->setNext(data);
     }
     else{
         Datum *temp = head;
@@ -34,7 +40,8 @@ void LList::insert (int index, int value){
             temp = temp->getNext();
         }
         next = temp->getNext();
-        temp->setNext(Datum(value));
+        Datum data(value);
+        temp->setNext(data);
         temp->getNext()->setNext(*next);
         length++;
     }
@@ -70,7 +77,7 @@ int LList::indexOf(int value){
     return -1;
 }
 bool LList:: isEmpty(){
-    if(head->getData()==NULL){
+    if(head==NULL){
         return true;
     }
     return false;
@@ -79,17 +86,21 @@ int LList::size() const{
     return length;
 }
 void LList::clear(){
-    head = tail;
-    head->setData(NULL);
+    head = tail = NULL;
 }
 
 const LList LList::operator+(const LList &rhs)const{
-    tail->setNext(rhs.getHead());
+    LList newList(*this);
+    Datum data =rhs.getHead();
+    newList.getTail().setNext(data);
+    newList.setSize(size()+rhs.size());
+    return newList;
 }
 const LList LList::operator=(const LList &rhs){
     *head = rhs.getHead();
     *tail = rhs.getTail();
     setSize(rhs.size());
+    return *this;
 }
 /*
 Should overload the operator[] (int index) method that can be used in the lhs or rhs of an assignment operator. <br />
@@ -105,10 +116,9 @@ int LList::operator[](int index) const{
             temp = temp->getNext();
         }
     }
-    if(index <0)
+    else if(index <0)
         return head->getData();
-    if(index >size())
-        return tail -> getData();
+    return tail -> getData();
 }
 //lhs
 int& LList::operator[](int index){
@@ -126,10 +136,8 @@ int& LList::operator[](int index){
         int ret = head->getData();
         return ret;
     }
-    if(index >size()){
-        int ret = tail->getData();
-        return ret;
-    }
+    int ret = tail->getData();
+    return ret;
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
@@ -175,18 +183,18 @@ Datum LList::getTail() const {
     return *tail;
 }
 
-ostream & operator<< (ostream &lhs, const LList &rhs) {
+/* ostream & operator<< (ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
         lhs << '-';
     for(int i=0; i<rhs.size(); i++){
         lhs << rhs.getData(i) << ' ';
     }
     return lhs;
-}
+} */
 
 /* istream & operator>>(istream &lhs, LList &rhs) {
     /* rhs.insert(rhs.size(),lhs);
-    return lhs; */
+    return lhs;
     for(int i = 0; i< rhs.size(); i++)
         lhs >> rhs.getData(i);
     return lhs;
