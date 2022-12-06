@@ -56,7 +56,10 @@ class LList {
     private:
         int size;
         //is this supposed to be datum or int? a tad bit confused
-        Datum *list;
+        Datum *head;
+        Datum *temp;
+        Datum *tail;
+
 
         void setSize(int size);
 };
