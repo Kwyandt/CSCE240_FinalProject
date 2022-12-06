@@ -113,19 +113,25 @@ int LList::operator[](int index) const{
         return tail -> getData();
 }
 //lhs
-int & LList::operator[](int index){
+int& LList::operator[](int index){
     if(index < size()) {
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
-            if(i == index)
-                return temp->getData();
+            if(i == index){
+                int ret = temp->getData();
+                return ret;
+            }
             temp = temp->getNext();
         }
     }
-    if(index <0)
-        return head->getData();
-    if(index >size())
-        return tail -> getData();
+    if(index <0){
+        int ret = head->getData();
+        return ret;
+    }
+    if(index >size()){
+        int ret = tail->getData();
+        return ret;
+    }
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
