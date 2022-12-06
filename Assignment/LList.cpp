@@ -17,16 +17,40 @@ LList::LList(const LList&){
 }
         
 void LList::insert (int index, int value){
-
+    Datum *temp = head;
+    for(int i = 0; i < index; i++){
+        temp = temp->getNext();
+    }
+    temp->setNext(Datum(value));
 }
 int LList::remove(int index){
-
+    Datum *temp = head;
+    for(int i = 0; i < index-1; i++){
+        temp = temp->getNext();
+    }
+    temp->setNext(*temp->getNext()->getNext());
 }
 bool LList::contains(int value){
-
+    Datum *temp = head;
+    for(int i = 0; i < size; i++){
+        if(temp->getData()==value){
+            return true;
+        }
+        temp = temp->getNext();
+    }
+    return false;
 }
 int LList::indexOf(int value){
-
+    Datum *temp = head;
+    int index = 0;
+    for(int i = 0; i < size; i++){
+        if(temp->getData()==value){
+            return index;
+        }
+        temp = temp->getNext();
+        index++;
+    }
+    return -1;
 }
 bool LList:: isEmpty(){
 
