@@ -5,22 +5,39 @@
 using namespace std;
 
 LList::LList(){
-
+    head = tail = NULL;
 }
-LList::LList(int[], int size){
-
+LList::LList(int arr[], int size){
+    for(int i=0; i<size; i++){
+        insert(i, arr[i]);
+    }
 }
-LList::LList(const LList&){
-
+LList::LList(const LList& list){
+    for(int i=0; i<list.size(); i++){
+        insert(i, list.getData(i));
+    }
 }
         
 void LList::insert (int index, int value){
-    Datum *temp = head;
-    for(int i = 0; i < index; i++){
-        temp = temp->getNext();
+    if(index <= 0){
+        Datum *temp = head;
+        *head = Datum(value);
+        head->setNext(*temp);
     }
-    temp->setNext(Datum(value));
-    length++;
+    else if(index >= length){
+        tail->setNext(Datum(value));
+    }
+    else{
+        Datum *temp = head;
+        Datum *next;
+        for(int i = 0; i < index; i++){
+            temp = temp->getNext();
+        }
+        next = temp->getNext();
+        temp->setNext(Datum(value));
+        temp->getNext()->setNext(*next);
+        length++;
+    }
 }
 int LList::remove(int index){
     Datum *temp = head;
@@ -67,10 +84,12 @@ void LList::clear(){
 }
 
 const LList LList::operator+(const LList &rhs)const{
-    
+    tail->setNext(rhs.getHead());
 }
 const LList LList::operator=(const LList &rhs){
-
+    *head = rhs.getHead();
+    *tail = rhs.getTail();
+    setSize(rhs.size());
 }
 /*
 Should overload the operator[] (int index) method that can be used in the lhs or rhs of an assignment operator. <br />
@@ -92,19 +111,25 @@ int LList::operator[](int index) const{
         return tail -> getData();
 }
 //lhs
-int & LList::operator[](int index){
+int& LList::operator[](int index){
     if(index < size()) {
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
-            if(i == index)
-                return temp->getData();
+            if(i == index){
+                int ret = temp->getData();
+                return ret;
+            }
             temp = temp->getNext();
         }
     }
-    if(index <0)
-        return head->getData();
-    if(index >size())
-        return tail -> getData();
+    if(index <0){
+        int ret = head->getData();
+        return ret;
+    }
+    if(index >size()){
+        int ret = tail->getData();
+        return ret;
+    }
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
