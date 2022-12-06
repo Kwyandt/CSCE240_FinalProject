@@ -4,8 +4,6 @@
 
 using namespace std;
 
-/* friend ostream & operator<< (ostream &lhs, const LList &rhs);
-friend istream & operator>> (istream &lhs, LList &rhs); */
 LList::LList(){
 
 }
@@ -151,3 +149,20 @@ Datum LList::getHead() const {
 Datum LList::getTail() const {
     return *tail;
 }
+
+ostream & operator<< (ostream &lhs, const LList &rhs) {
+    if(rhs.size() == 0)
+        lhs << '-';
+    for(int i=0; i<rhs.size(); i++){
+        lhs << rhs.getData(i) << ' ';
+    }
+    return lhs;
+}
+
+/* istream & operator>>(istream &lhs, LList &rhs) {
+    /* rhs.insert(rhs.size(),lhs);
+    return lhs; */
+    for(int i = 0; i< rhs.size(); i++)
+        lhs >> rhs.getData(i);
+    return lhs;
+}*/
