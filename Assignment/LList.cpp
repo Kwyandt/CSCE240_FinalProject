@@ -71,16 +71,19 @@ const LList LList::operator=(const LList &rhs){
 int LList::operator[](int index) const{
 
 }
-/* int LList:: & operator[](int index){
-
-} */
+int & LList::operator[](int index){
+    
+}
 bool LList::operator==(const LList &rhs) const{
     if(rhs.getSize() != getSize())
         return false;
-    Datum * temp 
+    Datum *temp = head;
     for(int i = 0; i<getSize(); i++){
-        
+        if(rhs.getData(i) != temp->getData())
+            return false;
+        temp->getNext();
     }
+    return true;
 }
         
 void LList::setData(int data, int index){
