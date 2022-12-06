@@ -22,7 +22,7 @@ void LList::insert (int index, int value){
         temp = temp->getNext();
     }
     temp->setNext(Datum(value));
-    size++;
+    length++;
 }
 int LList::remove(int index){
     Datum *temp = head;
@@ -30,11 +30,11 @@ int LList::remove(int index){
         temp = temp->getNext();
     }
     temp->setNext(*temp->getNext()->getNext());
-    size--;
+    length--;
 }
 bool LList::contains(int value){
     Datum *temp = head;
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size(); i++){
         if(temp->getData()==value){
             return true;
         }
@@ -45,7 +45,7 @@ bool LList::contains(int value){
 int LList::indexOf(int value){
     Datum *temp = head;
     int index = 0;
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size(); i++){
         if(temp->getData()==value){
             return index;
         }
@@ -60,8 +60,8 @@ bool LList:: isEmpty(){
     }
     return false;
 }
-int LList::length(){
-    return size;
+int LList::size() const{
+    return length;
 }
 void LList::clear(){
     head = tail;
@@ -81,7 +81,7 @@ int LList::operator[](int index) const{
 
 } */
 bool LList::operator==(const LList &rhs) const{
-    if(rhs.getSize() != getSize())
+    if(rhs.size() != size())
         return false;
     Datum * temp 
     for(int i = 0; i<getSize(); i++){
@@ -91,7 +91,7 @@ bool LList::operator==(const LList &rhs) const{
         
 void LList::setData(int data, int index){
     Datum *temp = head;
-    for(int i = 0; i<getSize(); i++){
+    for(int i = 0; i<size(); i++){
         if(i == index){
             temp->setData(data);
         }
@@ -99,7 +99,7 @@ void LList::setData(int data, int index){
 }
 int LList::getData(int index) const{
     Datum *temp = head;
-    for(int i = 0; i<getSize(); i++){
+    for(int i = 0; i<size(); i++){
         if(i == index)
             return temp->getData();
         temp->getNext();
@@ -107,12 +107,9 @@ int LList::getData(int index) const{
     return -1;
     
 }
-int LList::getSize() const{
-    return size;
-}
 
 void LList::setSize(int _size){
-    size = _size;
+    length = _size;
 }
 
 Datum LList::getHead() const {

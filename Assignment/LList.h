@@ -51,12 +51,11 @@ class LList {
         //not sure if this sets dataum or what exactly
         void setData(int data, int index);
         int getData(int index) const;
-        int getSize() const;
         Datum getHead() const;
         Datum getTail() const;
 
     private:
-        int size;
+        int length;
         //is this supposed to be datum or int? a tad bit confused
         Datum *head;
         Datum *tail;
