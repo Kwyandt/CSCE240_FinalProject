@@ -3,7 +3,7 @@
 
 using namespace std;
 
- //default
+//default
 Datum::Datum() : data(0.0), next(NULL) {
 
 }
