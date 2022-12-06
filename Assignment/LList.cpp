@@ -7,22 +7,39 @@ using namespace std;
 /* friend ostream & operator<< (ostream &lhs, const LList &rhs);
 friend istream & operator>> (istream &lhs, LList &rhs); */
 LList::LList(){
-
+    head = tail = NULL;
 }
-LList::LList(int[], int size){
-
+LList::LList(int arr[], int size){
+    for(int i=0; i<size; i++){
+        insert(i, arr[i]);
+    }
 }
-LList::LList(const LList&){
-
+LList::LList(const LList& list){
+    for(int i=0; i<list.size(); i++){
+        insert(i, list.getData(i));
+    }
 }
         
 void LList::insert (int index, int value){
-    Datum *temp = head;
-    for(int i = 0; i < index; i++){
-        temp = temp->getNext();
+    if(index <= 0){
+        Datum *temp = head;
+        *head = Datum(value);
+        head->setNext(*temp);
     }
-    temp->setNext(Datum(value));
-    length++;
+    else if(index >= length){
+        tail->setNext(Datum(value));
+    }
+    else{
+        Datum *temp = head;
+        Datum *next;
+        for(int i = 0; i < index; i++){
+            temp = temp->getNext();
+        }
+        next = temp->getNext();
+        temp->setNext(Datum(value));
+        temp->getNext()->setNext(*next);
+        length++;
+    }
 }
 int LList::remove(int index){
     Datum *temp = head;
@@ -69,10 +86,12 @@ void LList::clear(){
 }
 
 const LList LList::operator+(const LList &rhs)const{
-    
+    tail->setNext(rhs.getHead());
 }
 const LList LList::operator=(const LList &rhs){
-
+    *head = rhs.getHead();
+    *tail = rhs.getTail();
+    setSize(rhs.size());
 }
 int LList::operator[](int index) const{
 
