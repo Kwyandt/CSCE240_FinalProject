@@ -32,7 +32,7 @@ class LList {
         //empty method
         bool isEmpty();
         //size method 
-        int length();
+        int size() const;
         //clear method
         void clear();
 

@@ -31,9 +31,9 @@ int LList::indexOf(int value){
 bool LList:: isEmpty(){
 
 }
-int LList::length(){
+/* int LList::size() const{
 
-}
+} */
 void LList::clear(){
 
 }
@@ -55,7 +55,12 @@ bool LList::operator==(const LList &rhs) const{
 }
         
 void LList::setData(int data, int index){
-    
+    Datum *temp = head;
+    for(int i = 0; i<getSize(); i++){
+        if(i == index){
+            
+        }
+    }
 }
 int LList::getData(int index) const{
     Datum *temp = head;
