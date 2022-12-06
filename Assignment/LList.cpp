@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LList.h"
+#include "Datum.h"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int LList::indexOf(int value){
 bool LList:: isEmpty(){
 
 }
-int LList::size(){
+int LList::length(){
 
 }
 void LList::clear(){
@@ -46,23 +47,30 @@ const LList LList::operator=(const LList &rhs){
 int LList::operator[](int index) const{
 
 }
-int LList:: & operator[](int index){
+/* int LList:: & operator[](int index){
 
-}
+} */
 bool LList::operator==(const LList &rhs) const{
 
 }
         
 void LList::setData(int data, int index){
-
+    
 }
-Datum LList::getData(int index) const{
-
+int LList::getData(int index) const{
+    Datum *temp = head;
+    for(int i = 0; i<getSize(); i++){
+        if(i == index)
+            return temp->getData();
+        temp->getNext();
+    }
+    return -1;
+    
 }
 int LList::getSize() const{
-
+    return size;
 }
 
-void LList::setSize(int size){
-
+void LList::setSize(int _size){
+    size = _size;
 }

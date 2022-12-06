@@ -32,7 +32,7 @@ class LList {
         //empty method
         bool isEmpty();
         //size method 
-        int size();
+        int length();
         //clear method
         void clear();
 
@@ -50,7 +50,7 @@ class LList {
         //getters and setters
         //not sure if this sets dataum or what exactly
         void setData(int data, int index);
-        Datum getData(int index) const;
+        int getData(int index) const;
         int getSize() const;
 
     private:
