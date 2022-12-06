@@ -74,17 +74,36 @@ const LList LList::operator+(const LList &rhs)const{
 const LList LList::operator=(const LList &rhs){
 
 }
+/*
+Should overload the operator[] (int index) method that can be used in the lhs or rhs of an assignment operator. <br />
+This method will either return the value of the array at the given index or set the value at a given index.<br />
+If the index is out of the boundary then return either the first or last most
+*/
 int LList::operator[](int index) const{
-
+    if(index < size()) {
+        Datum *temp = head;
+        for(int i = 0; i<size(); i++){
+            if(i == index)
+                return temp->getData();
+            temp->getNext();
+        }
+    }
 }
 int & LList::operator[](int index){
-    
+    if(index < size()) {
+        Datum *temp = head;
+        for(int i = 0; i<size(); i++){
+            if(i == index)
+                return temp->getData();
+            temp->getNext();
+        }
+    }
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
         return false;
     Datum *temp = head;
-    for(int i = 0; i<getSize(); i++){
+    for(int i = 0; i<size(); i++){
         if(rhs.getData(i) != temp->getData())
             return false;
         temp->getNext();
