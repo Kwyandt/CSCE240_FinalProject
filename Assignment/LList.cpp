@@ -22,6 +22,7 @@ void LList::insert (int index, int value){
         temp = temp->getNext();
     }
     temp->setNext(Datum(value));
+    size++;
 }
 int LList::remove(int index){
     Datum *temp = head;
@@ -29,6 +30,7 @@ int LList::remove(int index){
         temp = temp->getNext();
     }
     temp->setNext(*temp->getNext()->getNext());
+    size--;
 }
 bool LList::contains(int value){
     Datum *temp = head;
@@ -53,17 +55,21 @@ int LList::indexOf(int value){
     return -1;
 }
 bool LList:: isEmpty(){
-
+    if(head->getData()==NULL){
+        return true;
+    }
+    return false;
 }
 int LList::length(){
-
+    return size;
 }
 void LList::clear(){
-
+    head = tail;
+    head->setData(NULL);
 }
 
 const LList LList::operator+(const LList &rhs)const{
-
+    
 }
 const LList LList::operator=(const LList &rhs){
 
