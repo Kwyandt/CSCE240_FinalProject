@@ -60,7 +60,6 @@ class LList {
         Datum *head;
         Datum *tail;
 
-
         void setSize(int size);
 };
 
