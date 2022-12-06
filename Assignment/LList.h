@@ -57,7 +57,6 @@ class LList {
         int size;
         //is this supposed to be datum or int? a tad bit confused
         Datum *head;
-        Datum *temp;
         Datum *tail;
 
 
