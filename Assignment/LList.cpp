@@ -81,11 +81,21 @@ int LList::operator[](int index) const{
 
 } */
 bool LList::operator==(const LList &rhs) const{
-
+    if(rhs.getSize() != getSize())
+        return false;
+    Datum * temp 
+    for(int i = 0; i<getSize(); i++){
+        
+    }
 }
         
 void LList::setData(int data, int index){
-    
+    Datum *temp = head;
+    for(int i = 0; i<getSize(); i++){
+        if(i == index){
+            temp->setData(data);
+        }
+    }
 }
 int LList::getData(int index) const{
     Datum *temp = head;
@@ -103,4 +113,12 @@ int LList::getSize() const{
 
 void LList::setSize(int _size){
     size = _size;
+}
+
+Datum LList::getHead() const {
+    return *head;
+}
+
+Datum LList::getTail() const {
+    return *tail;
 }

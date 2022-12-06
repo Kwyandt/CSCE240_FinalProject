@@ -32,7 +32,7 @@ class LList {
         //empty method
         bool isEmpty();
         //size method 
-        int length();
+        int size() const;
         //clear method
         void clear();
 
@@ -52,6 +52,8 @@ class LList {
         void setData(int data, int index);
         int getData(int index) const;
         int getSize() const;
+        Datum getHead() const;
+        Datum getTail() const;
 
     private:
         int size;
