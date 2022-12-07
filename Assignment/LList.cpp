@@ -70,7 +70,9 @@ int LList::remove(int index){
     int ret = 0;
     if(index <= 0){
         ret = head->getData();
-        head = head->getNext();
+        Datum *temp = head->getNext();
+        delete head;
+        head = temp;
         length--;
     }
     else if(index >= (length-1)){
@@ -79,16 +81,20 @@ int LList::remove(int index){
             temp = temp->getNext();
         }
         ret = temp->getNext()->getData();
+        delete tail;
         tail = temp;
         length--;
     }
     else{
         Datum *temp = head;
+        Datum *next;
         for(int i = 0; i < index-1; i++){
             temp = temp->getNext();
         }
-        ret = temp->getNext()->getData();
-        temp->setNext(*temp->getNext()->getNext());
+        next = temp->getNext();
+        ret = next->getData();
+        temp->setNext(*next->getNext());
+        delete next;
         length--;
     }
     return ret;
