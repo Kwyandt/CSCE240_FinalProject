@@ -168,17 +168,22 @@ This method will either return the value of the array at the given index or set 
 */
 //rhs
 int LList::operator[](int index) const{
+    if(size() == 0){
+        return dummy;
+    }
     if(index < size()) {
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
-            if(i == index)
+            if(i == index){
                 return temp->getData();
+            }
             temp = temp->getNext();
         }
     }
-    else if(index <0)
+    else if(index <0){
         return head->getData();
-    return tail -> getData();
+    }
+    return tail->getData();
 }
 //lhs
 int& LList::operator[](int index){
