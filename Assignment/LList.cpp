@@ -125,8 +125,13 @@ int LList::size() const{
     return length;
 }
 void LList::clear(){
-    head = tail = NULL;
-    setSize(0);
+    length = 0;
+    Datum *temp = head;
+    while (head != NULL) {
+        head = temp->getNext();
+        delete temp;
+        temp = head;
+    }
 }
 
 const LList LList::operator+(const LList &rhs)const{
