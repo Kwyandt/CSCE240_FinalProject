@@ -150,7 +150,7 @@ int main() {
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
-   
+
     
     
     cout << "******** Testing contains ********" << endl;
