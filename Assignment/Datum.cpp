@@ -23,6 +23,11 @@ Datum::~Datum() {
 int Datum::getData() {
     return data;
 }
+
+int& Datum::getData(int value) {
+    return data;
+}
+
 void Datum::setData(int value) {
     data = value;
 }

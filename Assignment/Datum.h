@@ -15,6 +15,7 @@ class Datum
         ~Datum();
 
         int getData();
+        int& getData(int);
         void setData(int);
 
         void setNext(Datum &);

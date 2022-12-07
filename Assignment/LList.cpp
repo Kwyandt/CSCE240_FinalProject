@@ -190,19 +190,15 @@ int& LList::operator[](int index){
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
             if(i == index){
-                int *ret = new int(temp->getData());
-                return *ret;
-                //return *temp->getData();
+                return temp->getData(0);
             }
             temp = temp->getNext();
         }
     }
     else if(index <0){
-        int *ret = new int(head->getData());
-                return *ret;
+        return head->getData(0);
     }
-    int *ret = new int(tail->getData());
-                return *ret;
+    return tail->getData(0);
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
