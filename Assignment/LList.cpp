@@ -261,7 +261,7 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
     return lhs;
 }
 //obtain a value of stream to be appended to the end of the LList object
-
+//TODO not actually modiying
 istream& operator>>(istream &lhs, LList &rhs) {
     lhs >> rhs[rhs.size()];
     return lhs;

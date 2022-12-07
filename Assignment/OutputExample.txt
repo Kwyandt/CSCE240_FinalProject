@@ -7,7 +7,17 @@ List3: 0 1 2
 List4:
 List5: 0 1 2
 
+******** Testing head and tail ********
+List2: 0 1
+List2 head: 0
+List2 tail: 1
+List3: 0 1 2
+List3 head: 0
+List3 tail: 2
+List4: 
+
 ******** Testing = ********
+List 3 = List2: 0 1
 List0 = list2 = list5: 0 1 2    0 1 2
 
 ******** Testing == ********

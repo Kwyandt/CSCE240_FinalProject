@@ -1,11 +1,23 @@
 #include <iostream>
 #include "LList.h"
-#include "LList.cpp"
-#include "Datum.cpp"
+/* #include "LList.cpp"
+#include "Datum.cpp" */
 
 /**
  * @author Matthew Hughes
  * 
+ * source of errors/memory leak issues:
+ * 1: equals method
+ * 2: right indexing []
+ * 3: Remove method
+ * 4: clear method
+ * 5: istream method >>
+ * 6: left indexing []
+ * 
+ * logic bugs:
+ * 1: equals method not cascade capable, prints   List0 = list2 = list5: 0 -694602592 6   0 1 2
+ * 2: instream doesn't append to linked list
+ * 3: index left [] i don't think its working right but idk
  */
 
 using namespace std;
@@ -36,6 +48,7 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    
     cout << "******** Testing head and tail ********" << endl;
     cout << "List2: " << list2 << endl;
     cout << "List2 head: " << list2.getHead().getData() << endl;
@@ -46,16 +59,18 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << endl;
 
-    cout << "******** Testing = ********" << endl;
+    
+    /* cout << "******** Testing = ********" << endl;
     list3 = list2;
-    cout << list3 << endl;
+    cout << "List3 = List2: " << list3 << endl;
     list4 = list2;
     list0 = list2 = list5;
     cout << "List0 = list2 = list5: " << list0 << "\t" << list2 << endl;
     cout << endl;
     list2 = list4;
-    list4 = list0 = list;
-
+    list4 = list0 = list; */
+    
+    
     cout << "******** Testing == ********" << endl;
     cout << "list == list0: " << (list == list0) << endl;
     cout << "list3 == list5: " << (list3 == list5) << endl;
@@ -63,7 +78,7 @@ int main() {
     cout << "list0 == list1: " << (list0 == list1) << endl;
     cout << endl;
 
-
+    
     cout << "******** Testing insert ********" << endl;
     list0.insert(0, 10);
     cout << "list0.insert(0,10): " << list0 << endl;
@@ -75,7 +90,8 @@ int main() {
     cout << "list2.insert(10,10): " << list5 << endl;
     cout << endl;
 
-cout << "******** Testing << ********" << endl;
+    
+    cout << "******** Testing << ********" << endl;
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
     cout << "List1: " << list1 << endl;
@@ -86,6 +102,7 @@ cout << "******** Testing << ********" << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
     cout << "list1 + list: " << list6 << endl;
@@ -97,7 +114,8 @@ cout << "******** Testing << ********" << endl;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
 
-    cout << "******** Testing Right [] Indexing ********" << endl;
+    
+    /* cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
     print = list9[0];
@@ -112,8 +130,10 @@ cout << "******** Testing << ********" << endl;
     cout << "list9[100]: " << print << endl;
     print = list[0];
     cout << "list[0]: " << print << endl;
-    cout << endl;
-
+    cout << endl; */
+   
+    
+    
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
     cout << "list9.indexOf(10): " << list9.indexOf(10) << endl;
@@ -123,15 +143,18 @@ cout << "******** Testing << ********" << endl;
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
 
-    cout << "******** Testing Remove ********" << endl;
+    
+    /* cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;
     cout << "list9.remove(2): " << list9.remove(2) << "\t" << list9 << endl;
     cout << "list9.remove(4): " << list9.remove(4) << "\t" << list9 << endl;
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
-    cout << endl;
-
+    cout << endl; */
+   
+    
+    
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
     cout << "list9.contains(100): " << list9.contains(100) << endl;
@@ -140,14 +163,15 @@ cout << "******** Testing << ********" << endl;
     cout << "list7.contains(0): " << list7.contains(0) << endl;
     cout << endl;
 
-
+    
     cout << "******** Testing isEmpty ********" << endl;
     cout << "list9.isEmpty(): " << list9.isEmpty() << endl;
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
-
-    cout << "******** Testing clear ********" << endl;
+    
+    
+    /* cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
     list7.clear();
@@ -158,9 +182,11 @@ cout << "******** Testing << ********" << endl;
     cout << "list9.insert(0,10): " << list9 << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
-    cout << endl;
+    cout << endl; */
+   
 
-    cout << "******** Testing >> ********" << endl;
+    
+    /* cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
     cin >> list10;
@@ -172,9 +198,10 @@ cout << "******** Testing << ********" << endl;
     cout << "Input a number to append to list11:";
     cin >> list11;
     cout << "4 >> list11: " << list11 << endl;
-    cout << endl;
+    cout << endl; */
+   
     
-    cout << "******** Testing Left [] Indexing ********" << endl;
+    /* cout << "******** Testing Left [] Indexing ********" << endl;
     //LList list11(test3, 3);
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
@@ -187,5 +214,6 @@ cout << "******** Testing << ********" << endl;
     list11[100] = 100;
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
-    cout << "list[0] = 5: " << list << endl;
+    cout << "list[0] = 5: " << list << endl; */
+   
 }
