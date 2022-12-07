@@ -26,22 +26,33 @@ int main() {
     LList list5(list3);
 
     cout << "******** Testing << ********" << endl;
-    /*
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
     cout << "List1: " << list1 << endl;
+
     cout << "List2: " << list2 << endl;
     cout << "List3: " << list3 << endl;
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    cout << "******** Testing head and tail ********" << endl;
+    cout << "List2: " << list2 << endl;
+    cout << "List2 head: " << list2.getHead().getData() << endl;
+    cout << "List2 tail: " << list2.getTail().getData() << endl;
+    cout << "List3: " << list3 << endl;
+    cout << "List3 head: " << list3.getHead().getData() << endl;
+    cout << "List3 tail: " << list3.getTail().getData() << endl;
+    cout << "List4: " << list4 << endl;
+    cout << endl;
+
     cout << "******** Testing = ********" << endl;
+    list3 = list2;
+    cout << list3 << endl;
     list4 = list2;
     list0 = list2 = list5;
     cout << "List0 = list2 = list5: " << list0 << "\t" << list2 << endl;
     cout << endl;
-    // Reset
     list2 = list4;
     list4 = list0 = list;
 
@@ -63,17 +74,28 @@ int main() {
     cout << "list2.insert(10,10): " << list5 << endl;
     cout << endl;
 
+cout << "******** Testing << ********" << endl;
+    cout << "List: " << list << endl;
+    cout << "List0: " << list0 << endl;
+    cout << "List1: " << list1 << endl;
+
+    cout << "List2: " << list2 << endl;
+    cout << "List3: " << list3 << endl;
+    cout << "List4: " << list4 << endl;
+    cout << "List5: " << list5 << endl;
+    cout << endl;
+
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
     cout << "list1 + list: " << list6 << endl;
     LList list7 = list + list1;
     cout << "List + list1: " << list7 << endl;
     LList list8 = list0 + list1;
-    cout << "List0 + list1: " << list8 << endl;
+    //cout << "List0 + list1: " << list8 << endl;
     LList list9 = list2 + list3 + list1;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
-
+/*
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
@@ -135,8 +157,8 @@ int main() {
     cout << "list9.insert(0,10): " << list9 << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
-    cout << endl; */
-/* 
+    cout << endl;
+
     cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
