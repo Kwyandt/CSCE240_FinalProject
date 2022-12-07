@@ -3,6 +3,9 @@
 #include <cstdlib>
 #include "Datum.h"
 
+#include <iostream>
+
+using namespace std;
 
 //does this need to call datum object//im confused abt how they connect
 class LList {
@@ -11,8 +14,8 @@ class LList {
         const LList operator<<(const LList &rhs);
         //overlaod operator >> method that will obtain a vlaue of stream to be appended to end of LList object
         const LList operator>>(const LList &lhs); */
-    //friend ostream & operator<< (ostream &lhs, const LList &rhs);
-	//friend istream & operator>> (istream &lhs, LList &rhs); 
+    friend ostream & operator<< (ostream &lhs, const LList &rhs);
+	friend istream & operator>> (istream &lhs, LList &rhs);
     public:
         //default constructor
         LList();

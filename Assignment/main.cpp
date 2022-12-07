@@ -63,6 +63,7 @@ int main() {
     cout << "list0 == list1: " << (list0 == list1) << endl;
     cout << endl;
 
+
     cout << "******** Testing insert ********" << endl;
     list0.insert(0, 10);
     cout << "list0.insert(0,10): " << list0 << endl;
@@ -158,7 +159,7 @@ cout << "******** Testing << ********" << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
-/*
+
     cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
@@ -187,5 +188,5 @@ cout << "******** Testing << ********" << endl;
     list11[100] = 100;
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
-    cout << "list[0] = 5: " << list << endl; 
+    cout << "list[0] = 5: " << list << endl; */
 }

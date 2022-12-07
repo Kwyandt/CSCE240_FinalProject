@@ -233,19 +233,19 @@ Datum LList::getTail() const {
     return *tail;
 }
 
-ostream & operator<< (ostream &lhs, const LList &rhs) {
+ostream& operator<<(ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
-        lhs << '-';
+        lhs << "-";
     for(int i=0; i<rhs.size(); i++){
-        lhs << rhs.getData(i) << ' ';
+        lhs << rhs.getData(i) << " ";
     }
     return lhs;
 }
 
-/* istream & operator>>(istream &lhs, LList &rhs) {
+/* istream& operator>>(istream &lhs, LList &rhs) {
     /* rhs.insert(rhs.size(),lhs);
     return lhs;
-    for(int i = 0; i< rhs.size(); i++)
-        lhs >> rhs.getData(i);
+    for(int i=0; i<rhs.size(); i++)
+        lhs >> rhs.setData(rhs.getData(i), rhs.size());
     return lhs;
-}*/
+} */
