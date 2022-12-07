@@ -7,15 +7,13 @@
  * @author Matthew Hughes
  * 
  * source of errors/memory leak issues:
- * 1: equals method
+ * 
  * 2: right indexing []
  * 3: Remove method
- * 4: clear method
  * 5: istream method >>
  * 6: left indexing []
  * 
  * logic bugs:
- * 1: equals method not cascade capable, prints   List0 = list2 = list5: 0 -694602592 6   0 1 2
  * 2: instream doesn't append to linked list
  * 3: index left [] i don't think its working right but idk
  */
@@ -60,7 +58,7 @@ int main() {
     cout << endl;
 
     
-    /* cout << "******** Testing = ********" << endl;
+    cout << "******** Testing = ********" << endl;
     list3 = list2;
     cout << "List3 = List2: " << list3 << endl;
     list4 = list2;
@@ -68,7 +66,7 @@ int main() {
     cout << "List0 = list2 = list5: " << list0 << "\t" << list2 << endl;
     cout << endl;
     list2 = list4;
-    list4 = list0 = list; */
+    list4 = list0 = list;
     
     
     cout << "******** Testing == ********" << endl;
@@ -171,7 +169,7 @@ int main() {
     cout << endl;
     
     
-    /* cout << "******** Testing clear ********" << endl;
+    cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
     list7.clear();
@@ -182,7 +180,7 @@ int main() {
     cout << "list9.insert(0,10): " << list9 << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
-    cout << endl; */
+    cout << endl;
    
 
     
