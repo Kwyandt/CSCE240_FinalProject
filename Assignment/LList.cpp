@@ -83,6 +83,8 @@ int LList::remove(int index){
         ret = temp->getNext()->getData();
         delete tail;
         tail = temp;
+        temp = NULL;
+        tail->setNext(*temp);
         length--;
     }
     else{
