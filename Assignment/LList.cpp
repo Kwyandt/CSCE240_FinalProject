@@ -87,11 +87,10 @@ int LList::remove(int index){
     }
     else{
         Datum *temp = head;
-        Datum *next;
         for(int i = 0; i < index-1; i++){
             temp = temp->getNext();
         }
-        next = temp->getNext();
+        Datum *next = temp->getNext();
         ret = next->getData();
         temp->setNext(*next->getNext());
         delete next;
