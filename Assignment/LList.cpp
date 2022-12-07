@@ -186,7 +186,7 @@ ostream & operator<< (ostream &lhs, const LList &rhs) {
 
 /* istream & operator>>(istream &lhs, LList &rhs) {
     /* rhs.insert(rhs.size(),lhs);
-    return lhs; */
+    return lhs;
     for(int i = 0; i< rhs.size(); i++)
         lhs >> rhs.getData(i);
     return lhs;
