@@ -240,11 +240,13 @@ const LList LList::operator=(const LList &rhs){
         }
     return *this;
 }
-/*
-Should overload the operator[] (int index) method that can be used in the lhs or rhs of an assignment operator. <br />
-This method will either return the value of the array at the given index or set the value at a given index.<br />
-*/
-//rhs
+
+/**
+ * @brief rhs insert/get method
+ * 
+ * @param index index being accessed or appended
+ * @return integer at specific index
+ */
 int LList::operator[](int index) const{
     if(size() == 0){
         return dummy;
@@ -263,7 +265,13 @@ int LList::operator[](int index) const{
     }
     return tail->getData();
 }
-//lhs
+
+/**
+ * @brief lhs insert/get method
+ * 
+ * @param index index being accessed or appended
+ * @return integer at specific index
+ */
 int& LList::operator[](int index){
     if(size() == 0){
         return dummy;
@@ -282,6 +290,14 @@ int& LList::operator[](int index){
     }
     return tail->getData(0);
 }
+
+/**
+ * @brief equals equals method , compared two linked lists
+ * 
+ * @param rhs llist being compared
+ * @return true, if equal
+ * @return false , if false
+ */
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())
         return false;
@@ -294,6 +310,12 @@ bool LList::operator==(const LList &rhs) const{
     return true;
 }
         
+/**
+ * @brief setter for data in linked list
+ * 
+ * @param data value being set at specific index
+ * @param index index being set at
+ */
 void LList::setData(int data, int index){
     Datum *temp = head;
     for(int i = 0; i<size(); i++){
@@ -303,6 +325,13 @@ void LList::setData(int data, int index){
         temp = temp->getNext();
     }
 }
+
+/**
+ * @brief getter for data value
+ * 
+ * @param index index being accessed
+ * @return integer at the index
+ */
 int LList::getData(int index) const{
     Datum *temp = head;
     for(int i = 0; i<size(); i++){
@@ -314,18 +343,40 @@ int LList::getData(int index) const{
     
 }
 
+/**
+ * @brief setter for size variable
+ * 
+ * @param _size size being set
+ */
 void LList::setSize(int _size){
     length = _size;
 }
 
+/**
+ * @brief getter for head variable
+ * 
+ * @return head variable
+ */
 Datum LList::getHead() const {
     return *head;
 }
 
+/**
+ * @brief getter for tail variable
+ * 
+ * @return getter variable
+ */
 Datum LList::getTail() const {
     return *tail;
 }
 
+/**
+ * @brief ostream method overloac <<
+ * 
+ * @param lhs ostream
+ * @param rhs linked list being output
+ * @return ostream 
+ */
 ostream& operator<<(ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
         lhs << "-";
@@ -334,8 +385,14 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
     }
     return lhs;
 }
-//obtain a value of stream to be appended to the end of the LList object
-//TODO not actually modiying
+
+/**
+ * @brief istream method overload >>
+ * 
+ * @param lhs istream
+ * @param rhs linked list being appendd to
+ * @return istream
+ */
 istream& operator>>(istream &lhs, LList &rhs) {
     //lhs >> rhs[rhs.size()];
     /* rhs.length = rhs.length + 1; */
