@@ -230,8 +230,8 @@ const LList LList::operator+(const LList &rhs)const{
 /**
  * @brief Sets the current list to the supplied list
  * 
- * @param rhs 
- * @return const LList 
+ * @param rhs The list the value is being changed to
+ * @return const LList The new linked list
  */
 const LList LList::operator=(const LList &rhs){
     clear();
