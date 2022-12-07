@@ -1,7 +1,7 @@
 #include <iostream>
 #include "LList.h"
-#include "LList.cpp"
-#include "Datum.cpp"
+//#include "LList.cpp"
+//#include "Datum.cpp"
 
 /**
  * @author Matthew Hughes
@@ -26,22 +26,33 @@ int main() {
     LList list5(list3);
 
     cout << "******** Testing << ********" << endl;
-    /*
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
     cout << "List1: " << list1 << endl;
+/*
     cout << "List2: " << list2 << endl;
     cout << "List3: " << list3 << endl;
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    cout << "******** Testing head and tail ********" << endl;
+    cout << "List2: " << list2 << endl;
+    cout << "List2 head: " << list2.getHead().getData() << endl;
+    cout << "List2 tail: " << list2.getTail().getData() << endl;
+    cout << "List3: " << list3 << endl;
+    cout << "List3 head: " << list3.getHead().getData() << endl;
+    cout << "List3 tail: " << list3.getTail().getData() << endl;
+    cout << "List4: " << list4 << endl;
+    cout << endl;
+
     cout << "******** Testing = ********" << endl;
+    list3 = list2;
+    cout << list3 << endl;
     list4 = list2;
     list0 = list2 = list5;
     cout << "List0 = list2 = list5: " << list0 << "\t" << list2 << endl;
     cout << endl;
-    // Reset
     list2 = list4;
     list4 = list0 = list;
 
@@ -61,6 +72,17 @@ int main() {
     cout << "list2.insert(1,10): " << list2 << endl;
     list5.insert(10, 10);
     cout << "list2.insert(10,10): " << list5 << endl;
+    cout << endl;
+
+cout << "******** Testing << ********" << endl;
+    cout << "List: " << list << endl;
+    cout << "List0: " << list0 << endl;
+    cout << "List1: " << list1 << endl;
+
+    cout << "List2: " << list2 << endl;
+    cout << "List3: " << list3 << endl;
+    cout << "List4: " << list4 << endl;
+    cout << "List5: " << list5 << endl;
     cout << endl;
 
     cout << "******** Testing + ********" << endl;
@@ -135,8 +157,8 @@ int main() {
     cout << "list9.insert(0,10): " << list9 << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
-    cout << endl; */
-/* 
+    cout << endl;
+
     cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
