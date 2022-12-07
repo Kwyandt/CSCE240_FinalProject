@@ -7,7 +7,12 @@
 
 using namespace std;
 
-//does this need to call datum object//im confused abt how they connect
+/**
+ * @author Caleb Henry and Katelyn Wyandt
+ * 
+ * @breif header file for LList class
+ * 
+ */
 class LList {
         friend ostream & operator<< (ostream &lhs, const LList &rhs);
         friend istream & operator>> (istream &lhs, LList &rhs);
@@ -20,13 +25,13 @@ class LList {
         LList(const LList&);
         ~LList();
         
-        //intert method - need to check for the appropriate index , if out of bounts then add to begining or end on appropriate sides
+        //intert method
         void insert (int index, int value);
-        //remove method - remove item at index and return value of removes item - if out of bounds then remove forst or last element
+        //remove method
         int remove(int index);
         //contains method
         bool contains(int value);
-        //indexOf method - return index of the first occurance of the value
+        //indexOf method
         int indexOf(int value);
         //empty method
         bool isEmpty();
@@ -42,12 +47,10 @@ class LList {
         const LList operator=(const LList &rhs);
         //overload operator[] method that can be used on lhs or rhs of operator assignment
         int operator[](int index) const;
-        //i think you neeeded like one by refernce and one not for this - return the value of the array at given index or set value at given index - return first or last if out of bounds
-        int & operator[](int index);
-        //overloaoperator== that returns true of two linked lists are identical and dalce if differenct        
+        int & operator[](int index);       
         bool operator==(const LList &rhs) const;
+
         //getters and setters
-        //not sure if this sets dataum or what exactly
         void setData(int data, int index);
         int getData(int index) const;
         Datum getHead() const;

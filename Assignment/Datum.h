@@ -2,6 +2,14 @@
 #define DATUM_H
 #include <cstdlib>
 
+
+/**
+ * @author Caleb Henry and Katelyn Wyandt
+ * 
+ * @breif header file for datum class
+ * 
+ */
+
 class Datum
 {
     public:
