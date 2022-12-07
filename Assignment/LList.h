@@ -52,8 +52,6 @@ class LList {
         int getData(int index) const;
         Datum getHead() const;
         Datum getTail() const;
-        /* Datum getTemp() const;
-        void setTemp(const LList &rhs); */
 
     private:
         //size variable
@@ -61,7 +59,6 @@ class LList {
 
         //data
         Datum *head;
-        /* Datum *temp; */
         Datum *tail;
 
         void setSize(int size);

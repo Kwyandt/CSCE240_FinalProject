@@ -4,12 +4,11 @@
 #include "Datum.cpp" */
 
 /**
- * @author Matthew Hughes
+ * @author Matt Hughes
  * 
  * source of errors/memory leak issues:
  * 
  * 2: right indexing []
- * 3: Remove method
  * 5: istream method >>
  * 6: left indexing []
  * 
@@ -113,7 +112,7 @@ int main() {
     cout << endl;
 
     
-    /* cout << "******** Testing Right [] Indexing ********" << endl;
+    cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
     print = list9[0];
@@ -128,7 +127,7 @@ int main() {
     cout << "list9[100]: " << print << endl;
     print = list[0];
     cout << "list[0]: " << print << endl;
-    cout << endl; */
+    cout << endl;
    
     
     
@@ -143,6 +142,7 @@ int main() {
 
     
     cout << "******** Testing Remove ********" << endl;
+    cout << list9 << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;
     cout << "list9.remove(2): " << list9.remove(2) << "\t" << list9 << endl;

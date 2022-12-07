@@ -147,9 +147,6 @@ const LList LList::operator+(const LList &rhs)const{
         for(int i=0; i<rhs.size(); i++){
             newList.insert(newList.size(), rhs.getData(i));
         }
-        //Datum *data = new Datum(rhs.getHead());
-        //newList.getTail().setNext(*data);
-        //newList.setSize(size()+rhs.size());
         return newList;
     }
     else if(size()<=0){
@@ -195,6 +192,7 @@ int& LList::operator[](int index){
             if(i == index){
                 int *ret = new int(temp->getData());
                 return *ret;
+                //return *temp->getData();
             }
             temp = temp->getNext();
         }
@@ -250,14 +248,6 @@ Datum LList::getTail() const {
     return *tail;
 }
 
-/* Datum LList::getTemp() const {
-    return *temp;
-}
-
-void LList::setTemp(const LList &rhs) {
-    temp = rhs;
-}
- */
 ostream& operator<<(ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
         lhs << "-";
