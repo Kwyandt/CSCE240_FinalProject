@@ -147,16 +147,10 @@ const LList LList::operator+(const LList &rhs)const{
 
 }
 const LList LList::operator=(const LList &rhs){
-    setSize(rhs.size());
-    if(size()>0){
-        Datum *newHead = new Datum(rhs.getHead());
-        Datum *newTail = new Datum(rhs.getTail());
-        head = newHead;
-        tail = newTail;
-    }
-    else{
-        head = tail = NULL;
-    }
+    clear();
+    for(int i=0; i<rhs.size(); i++){
+            insert(size(), rhs.getData(i));
+        }
     return *this;
 }
 /*
