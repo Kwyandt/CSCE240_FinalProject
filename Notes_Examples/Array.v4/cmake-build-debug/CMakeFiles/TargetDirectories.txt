@@ -1,0 +1,3 @@
+/Data/Dropbox/Projects/C++/Array.v4/cmake-build-debug/CMakeFiles/Array.v4.dir
+/Data/Dropbox/Projects/C++/Array.v4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Data/Dropbox/Projects/C++/Array.v4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

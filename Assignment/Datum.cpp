@@ -17,10 +17,10 @@ Datum::Datum(const Datum &rhs) : data(rhs.data), next(rhs.next) {
 }
 //deconstructor - is this right? no clue  :)
 Datum::~Datum() {
-    delete [] next;
+    
 }
 
-int Datum::getData() const {
+int Datum::getData() {
     return data;
 }
 void Datum::setData(int value) {

@@ -14,7 +14,7 @@ class Datum
         //deconstructor
         ~Datum();
 
-        int getData() const;
+        int getData();
         void setData(int);
 
         void setNext(Datum &);
