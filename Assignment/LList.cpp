@@ -236,18 +236,40 @@ int LList::getData(int index) const{
     
 }
 
+/**
+ * @brief setter for length variable
+ * 
+ * @param _size interger value for size
+ */
 void LList::setSize(int _size){
     length = _size;
 }
 
+/**
+ * @brief getter for head variable
+ * 
+ * @return head pointer
+ */
 Datum LList::getHead() const {
     return *head;
 }
 
+/**
+ * @brief getter for tail vairable
+ * 
+ * @return tail pointer 
+ */
 Datum LList::getTail() const {
     return *tail;
 }
 
+/**
+ * @brief output stream  method
+ * 
+ * @param lhs output stream
+ * @param rhs datum being output
+ * @return output stream
+ */
 ostream& operator<<(ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
         lhs << "-";
@@ -256,11 +278,15 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
     }
     return lhs;
 }
-//obtain a value of stream to be appended to the end of the LList object
-//TODO not actually modiying
+
+/**
+ * @brief input overload method
+ * 
+ * @param lhs input stream 
+ * @param rhs datum being appended to
+ * @return input stream
+ */
 istream& operator>>(istream &lhs, LList &rhs) {
-    //lhs >> rhs[rhs.size()];
-    /* rhs.length = rhs.length + 1; */
     int input;
     lhs >> input;
     rhs.insert(rhs.size(), input);
