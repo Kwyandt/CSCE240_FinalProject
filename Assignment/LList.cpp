@@ -183,8 +183,7 @@ int LList::operator[](int index) const{
 //lhs
 int& LList::operator[](int index){
     if(size() == 0){
-        int *ret = new int(0);
-        return *ret;
+        return length;
     }
     if(index < size()) {
         Datum *temp = head;
