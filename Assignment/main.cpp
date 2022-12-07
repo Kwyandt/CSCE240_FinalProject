@@ -142,14 +142,14 @@ int main() {
     cout << endl;
 
     
-    /* cout << "******** Testing Remove ********" << endl;
+    cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;
     cout << "list9.remove(2): " << list9.remove(2) << "\t" << list9 << endl;
     cout << "list9.remove(4): " << list9.remove(4) << "\t" << list9 << endl;
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
-    cout << endl; */
+    cout << endl;
    
     
     
