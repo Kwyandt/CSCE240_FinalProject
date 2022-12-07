@@ -53,6 +53,9 @@ void LList::insert (int index, int value){
     }
 }
 int LList::remove(int index){
+    if(size() == 0){
+        return -1;
+    }
     int ret = 0;
     if(index <= 0){
         ret = head->getData();
@@ -61,7 +64,7 @@ int LList::remove(int index){
     }
     else if(index >= (length-1)){
         Datum *temp = head;
-        for(int i = 0; i < length-1; i++){
+        for(int i = 0; i < length-2; i++){
             temp = temp->getNext();
         }
         ret = temp->getNext()->getData();
@@ -118,9 +121,12 @@ void LList::clear(){
 const LList LList::operator+(const LList &rhs)const{
     if(size()>0 && rhs.size()>0){
         LList newList(*this);
-        Datum *data = new Datum(rhs.getHead());
-        newList.getTail().setNext(*data);
-        newList.setSize(size()+rhs.size());
+        for(int i=0; i<rhs.size(); i++){
+            newList.insert(newList.size(), rhs.getData(i));
+        }
+        //Datum *data = new Datum(rhs.getHead());
+        //newList.getTail().setNext(*data);
+        //newList.setSize(size()+rhs.size());
         return newList;
     }
     else if(size()<=0){
@@ -162,22 +168,26 @@ int LList::operator[](int index) const{
 }
 //lhs
 int& LList::operator[](int index){
+    if(size() == 0){
+        int *ret = new int(0);
+        return *ret;
+    }
     if(index < size()) {
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
             if(i == index){
-                int ret = temp->getData();
-                return ret;
+                int *ret = new int(temp->getData());
+                return *ret;
             }
             temp = temp->getNext();
         }
     }
-    if(index <0){
-        int ret = head->getData();
-        return ret;
+    else if(index <0){
+        int *ret = new int(head->getData());
+                return *ret;
     }
-    int ret = tail->getData();
-    return ret;
+    int *ret = new int(tail->getData());
+                return *ret;
 }
 bool LList::operator==(const LList &rhs) const{
     if(rhs.size() != size())

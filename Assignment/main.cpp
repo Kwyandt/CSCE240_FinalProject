@@ -1,7 +1,7 @@
 #include <iostream>
 #include "LList.h"
-#include "LList.cpp"
-#include "Datum.cpp"
+//#include "LList.cpp"
+//#include "Datum.cpp"
 
 /**
  * @author Matthew Hughes
@@ -29,7 +29,7 @@ int main() {
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
     cout << "List1: " << list1 << endl;
-
+/*
     cout << "List2: " << list2 << endl;
     cout << "List3: " << list3 << endl;
     cout << "List4: " << list4 << endl;
@@ -91,11 +91,11 @@ cout << "******** Testing << ********" << endl;
     LList list7 = list + list1;
     cout << "List + list1: " << list7 << endl;
     LList list8 = list0 + list1;
-    //cout << "List0 + list1: " << list8 << endl;
+    cout << "List0 + list1: " << list8 << endl;
     LList list9 = list2 + list3 + list1;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
-/*
+
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
