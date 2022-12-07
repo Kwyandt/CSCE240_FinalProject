@@ -22,6 +22,17 @@ LList::LList(const LList& list){
         insert(i, list.getData(i));
     }
 }
+
+//destructor
+LList::~LList() {
+    length = 0;
+    Datum *temp = head;
+    while (head != NULL) {
+        head = temp->getNext();
+        delete temp;
+        temp = head;
+    }
+}
         
 void LList::insert (int index, int value){
     if(index <= 0){
@@ -233,6 +244,14 @@ Datum LList::getTail() const {
     return *tail;
 }
 
+/* Datum LList::getTemp() const {
+    return *temp;
+}
+
+void LList::setTemp(const LList &rhs) {
+    temp = rhs;
+}
+ */
 ostream& operator<<(ostream &lhs, const LList &rhs) {
     if(rhs.size() == 0)
         lhs << "-";
@@ -242,16 +261,8 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
     return lhs;
 }
 //obtain a value of stream to be appended to the end of the LList object
-/*
+
 istream& operator>>(istream &lhs, LList &rhs) {
-    /* rhs.insert(rhs.size(),lhs);
-    return lhs;*/
-    /* Datum *temp = rhs.head;
-    for(int i = 0; i<rhs.getSize(); i++){
-        if()
-    }
-    lhs >> temp->getData(); 
-    //lhs >> rhs.tail;
+    lhs >> rhs[rhs.size()];
     return lhs;
 }
-*/

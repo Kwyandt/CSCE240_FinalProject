@@ -20,7 +20,7 @@ Datum::~Datum() {
     
 }
 
-int Datum::getData() const {
+int Datum::getData() {
     return data;
 }
 void Datum::setData(int value) {

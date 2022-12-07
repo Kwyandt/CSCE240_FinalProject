@@ -9,13 +9,8 @@ using namespace std;
 
 //does this need to call datum object//im confused abt how they connect
 class LList {
-    /* //overload operator<< method that prints all elements of the LList in one row, delimeter is spac
-        //not sure if const is right or if this returns a string, generally unsure
-        const LList operator<<(const LList &rhs);
-        //overlaod operator >> method that will obtain a vlaue of stream to be appended to end of LList object
-        const LList operator>>(const LList &lhs); */
-    friend ostream & operator<< (ostream &lhs, const LList &rhs);
-	friend istream & operator>> (istream &lhs, LList &rhs);
+        friend ostream & operator<< (ostream &lhs, const LList &rhs);
+        friend istream & operator>> (istream &lhs, LList &rhs);
     public:
         //default constructor
         LList();
@@ -23,6 +18,7 @@ class LList {
         LList(int[], int size);
         //copy constructor //is the & in the right location?
         LList(const LList&);
+        ~LList();
         
         //intert method - need to check for the appropriate index , if out of bounts then add to begining or end on appropriate sides
         void insert (int index, int value);
@@ -56,11 +52,16 @@ class LList {
         int getData(int index) const;
         Datum getHead() const;
         Datum getTail() const;
+        /* Datum getTemp() const;
+        void setTemp(const LList &rhs); */
 
     private:
+        //size variable
         int length;
-        //is this supposed to be datum or int? a tad bit confused
+
+        //data
         Datum *head;
+        /* Datum *temp; */
         Datum *tail;
 
         void setSize(int size);

@@ -175,7 +175,7 @@ cout << "******** Testing << ********" << endl;
     cout << endl;
     
     cout << "******** Testing Left [] Indexing ********" << endl;
-    LList list11(test3, 3);
+    //LList list11(test3, 3);
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
     list11[-1] = 4;
