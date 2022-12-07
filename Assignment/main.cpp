@@ -184,7 +184,7 @@ int main() {
    
 
     
-    /* cout << "******** Testing >> ********" << endl;
+    cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
     cin >> list10;
@@ -196,10 +196,10 @@ int main() {
     cout << "Input a number to append to list11:";
     cin >> list11;
     cout << "4 >> list11: " << list11 << endl;
-    cout << endl; */
+    cout << endl;
    
     
-    /* cout << "******** Testing Left [] Indexing ********" << endl;
+    cout << "******** Testing Left [] Indexing ********" << endl;
     //LList list11(test3, 3);
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
@@ -212,6 +212,6 @@ int main() {
     list11[100] = 100;
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
-    cout << "list[0] = 5: " << list << endl; */
+    cout << "list[0] = 5: " << list << endl;
    
 }

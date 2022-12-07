@@ -56,6 +56,8 @@ class LList {
     private:
         //size variable
         int length;
+        //error variable
+        int dummy = -1;
 
         //data
         Datum *head;

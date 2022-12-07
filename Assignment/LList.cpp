@@ -25,7 +25,7 @@ LList::LList(const LList& list){
 
 //destructor
 LList::~LList() {
-    length = 0;
+    //length = 0;
     Datum *temp = head;
     while (head != NULL) {
         head = temp->getNext();
@@ -183,7 +183,7 @@ int LList::operator[](int index) const{
 //lhs
 int& LList::operator[](int index){
     if(size() == 0){
-        return length;
+        return dummy;
     }
     if(index < size()) {
         Datum *temp = head;
@@ -254,7 +254,10 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
 //obtain a value of stream to be appended to the end of the LList object
 //TODO not actually modiying
 istream& operator>>(istream &lhs, LList &rhs) {
-    lhs >> rhs[rhs.size()];
-    rhs.length = rhs.length + 1;
+    //lhs >> rhs[rhs.size()];
+    /* rhs.length = rhs.length + 1; */
+    int input;
+    lhs >> input;
+    rhs.insert(rhs.size(), input);
     return lhs;
 }
