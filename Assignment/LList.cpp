@@ -241,11 +241,17 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
     }
     return lhs;
 }
-
-/* istream& operator>>(istream &lhs, LList &rhs) {
+//obtain a value of stream to be appended to the end of the LList object
+/*
+istream& operator>>(istream &lhs, LList &rhs) {
     /* rhs.insert(rhs.size(),lhs);
+    return lhs;*/
+    /* Datum *temp = rhs.head;
+    for(int i = 0; i<rhs.getSize(); i++){
+        if()
+    }
+    lhs >> temp->getData(); 
+    //lhs >> rhs.tail;
     return lhs;
-    for(int i=0; i<rhs.size(); i++)
-        lhs >> rhs.setData(rhs.getData(i), rhs.size());
-    return lhs;
-} */
+}
+*/
