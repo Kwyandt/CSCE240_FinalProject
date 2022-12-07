@@ -150,11 +150,14 @@ int & myArray::operator[](int index) {
 }
 
 ostream& operator<<(ostream &os, const myArray &dt) {
-    os << dt.size << " ";
+    for(int i = 0; i<dt.getSize(); i++)
+        os << dt.getData(i) << " ";
     return os;
 }
 
+//not sure why this only works as constnat even tho header isnt dclared as on
 istream& operator>>(istream &is, const myArray &dt) {
-    is >> dt.getData(0)>> dt.getSize();
+    for(int i = 0; i<dt.getSize(); i++)
+        is >> dt.getData(i);
     return is;
 }

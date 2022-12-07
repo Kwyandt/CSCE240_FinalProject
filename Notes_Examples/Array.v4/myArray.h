@@ -1,10 +1,13 @@
 #ifndef MYARRAY_H
 #define MYARRAY_H
 
+#include <iostream>
+
+using namespace std;
 
 class myArray {
-	friend ostream & operator<< (ostream &lhs, const myArray &rhs);
-	friend istream & operator>> (istream &lhs, myArray &rhs);
+	friend  ostream & operator<< (ostream &lhs, const myArray &rhs);
+	friend  istream & operator>> (istream &lhs, const myArray &rhs);
 public:
     myArray();
 

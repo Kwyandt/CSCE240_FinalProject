@@ -29,7 +29,7 @@ int main() {
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
     cout << "List1: " << list1 << endl;
-/*
+
     cout << "List2: " << list2 << endl;
     cout << "List3: " << list3 << endl;
     cout << "List4: " << list4 << endl;
@@ -62,6 +62,7 @@ int main() {
     cout << "list3 == list2: " << (list3 == list2) << endl;
     cout << "list0 == list1: " << (list0 == list1) << endl;
     cout << endl;
+
 
     cout << "******** Testing insert ********" << endl;
     list0.insert(0, 10);
@@ -159,6 +160,7 @@ cout << "******** Testing << ********" << endl;
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
 
+/*
     cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
@@ -186,5 +188,6 @@ cout << "******** Testing << ********" << endl;
     list11[100] = 100;
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
-    cout << "list[0] = 5: " << list << endl; */
+    cout << "list[0] = 5: " << list << endl;
+    */
 }
