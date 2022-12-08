@@ -3,6 +3,12 @@
 #include "Datum.h"
 
 using namespace std;
+/**
+ * @author Caleb Henry and Katelyn Wyandt
+ * 
+ * @brief functions for LList class
+ * 
+ **/
 
 /**
  * @brief Construct a new LList::LList object
@@ -276,7 +282,10 @@ int& LList::operator[](int index){
     if(size() == 0){
         return dummy;
     }
-    if(index < size()) {
+    else if(index <0){
+        return head->getData(0);
+    }
+    else if(index < size()) {
         Datum *temp = head;
         for(int i = 0; i<size(); i++){
             if(i == index){
@@ -284,9 +293,6 @@ int& LList::operator[](int index){
             }
             temp = temp->getNext();
         }
-    }
-    else if(index <0){
-        return head->getData(0);
     }
     return tail->getData(0);
 }
@@ -394,8 +400,6 @@ ostream& operator<<(ostream &lhs, const LList &rhs) {
  * @return istream
  */
 istream& operator>>(istream &lhs, LList &rhs) {
-    //lhs >> rhs[rhs.size()];
-    /* rhs.length = rhs.length + 1; */
     int input;
     lhs >> input;
     rhs.insert(rhs.size(), input);
