@@ -208,9 +208,9 @@ int main() {
     list11[3] = 5;
     cout << "list11[3] = 5: " << list11 << endl;
     list11[list11.size()] = 10;
-    cout << "list11[list11.size()] = 5: " << list11 << endl;
+    cout << "list11[list11.size()] = 10: " << list11 << endl;
     list11[100] = 100;
-    cout << "list11[100] = 5: " << list11 << endl;
+    cout << "list11[100] = 100: " << list11 << endl;
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
    
